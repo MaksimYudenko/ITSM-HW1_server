@@ -1,4 +1,3 @@
-
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -20,15 +19,13 @@ public class Client {
     public static void main(String args[]) {
         arguments = args;
         if (args.length == 0) {
-            System.out.println("You should send a message to the server");
+            System.out.println("Send a message to the server");
             System.exit(1);
         } else new Client().run();
     }
+
     private void run() {
         try {
-            if (arguments.length == 0) {
-                throw new RuntimeException("You should send a message to the server");
-            }
             String name = arguments[0];
             clientSocket = new Socket("localhost", 1234);
             out = new ObjectOutputStream(clientSocket.getOutputStream());
